@@ -1,0 +1,11 @@
+version: '2.1'
+
+services:
+  softhsm:
+    image: dahoba/softhsm-proxy
+    build: .
+    environment:
+      PKCS11_DAEMON_SOCKET: "tcp://0.0.0.0:5657"
+    ports:
+      - "5657:5657"
+
